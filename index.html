@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3 Seatwork 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            border-style: solid;
+            margin: 15px;
+        }
+        body {
+            background-color: rgb(208, 219, 246);
+        }
+        .brands {
+            align-self:auto;
+        }
+        .locations {
+            align-self: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--Navigation bar so hard-->
+    <nav class="navbar-expand-md" id="navbar">
+        <div class="navbar">
+            <ul class="nav" id="shop">
+                <li class="nav-item"></li>
+                <a href="#">shop</a>
+            </ul>
+            <ul class="nav" id="finder">
+                <li class="nav-item"></li>
+                <a href="#">finder</a>
+            </ul>
+
+            <center>
+                <h1>Product finder</h1>
+            </center>
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Search">
+                <button class="btn btn-primary" type="button">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+
+
+<!--so har har :(-->
+<div id="input">
+  <form>
+    <h3>Put your budget here</h3> 
+    <input type="text" class="form-control" id="budget" placeholder="Enter here...">
+  </form>
+</div>
+
+<br>
+
+<div class="container">
+    <div id="brands">
+      <button id="buttons" class="btn" onclick="showBrand()">Brand & Discounts</button>
+    </div>
+    <br>
+    <div id="locations">
+      <button id="buttons" class="btn" onclick="showStore()">Store Location</button>
+    </div>
+</div>
+
+
+<!--ril java script:(-->
+<script>
+    function showBrand(){
+        let budget = Number (document.getElementById('budget').value);
+        let disc = budget * 0.20;
+        let finalPrice = disc.toFixed(2);
+        document.getElementById("brands").innerHTML =
+        "Recommended Brands:<br>" +
+        "<button id='brand_btn' class='btn'>Acer</button><br>" +
+        "<button id='brand_btn' class='btn'>Apple</button><br>" +
+        "<button id='brand_btn' class='btn'>Lenovo</button><br>" +
+        "You only have : " +
+        "<span style='color: red;'><kbd style='font-size: 25px;'>" +
+        finalPrice +
+        "</kbd></span> discount.</b>";
+    }
+
+    function showStore(){
+        document.getElementById("locations").innerHTML =
+        "<i>Cyberzone, SM City Fairview Main Building <br> Quirino Highway, Corner Regalado Hwy</i><br>" +
+        "<i>SM City North EDSA Annex 1 Tunnel, Bago Bantay, <br> Quezon City, Metro Manila</i>";
+    }
+</script>
+
+</body>
+</html>
